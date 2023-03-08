@@ -6,13 +6,15 @@ export type PokemonCardProps = {
 }
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => (
-  <Image
-    key={pokemon.id}
-    alt={pokemon.name}
-    width={200}
-    height={200}
-    src={pokemon.sprites.other['official-artwork'].front_default}
-  />
+  <div key={pokemon.id} className="flex max-w-200">
+    <Image
+      alt={pokemon.name}
+      width={200}
+      height={200}
+      src={pokemon.sprites.other['official-artwork'].front_default}
+    />
+    <p className="text-slate-900">{pokemon.name}</p>
+  </div>
 )
 
 export default PokemonCard
