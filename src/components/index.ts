@@ -1,5 +1,1 @@
-export { default as Modal } from './Modal'
 export { default as PokemonCard } from './PokemonCard'
-export { default as PokemonCardExpanded } from './PokemonCardExpanded'
-export { default as ProgressBar } from './ProgressBar'
-export { default as Tabs } from './Tabs'
