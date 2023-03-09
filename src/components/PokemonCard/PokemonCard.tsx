@@ -1,9 +1,9 @@
-import { Pokemon } from '@/types'
-import Image from 'next/image'
+import { Pokemon } from '@/types';
+import Image from 'next/image';
 
 export type PokemonCardProps = {
-  pokemon: Pokemon
-}
+  pokemon: Pokemon;
+};
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => (
   <div key={pokemon.id} className="flex max-w-200">
@@ -13,8 +13,8 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => (
       height={200}
       src={pokemon.sprites.other['official-artwork'].front_default}
     />
-    <p className="text-slate-900">{pokemon.name}</p>
+    <p className="text-red-900">{pokemon.name}</p>
   </div>
-)
+);
 
-export default PokemonCard
+export default PokemonCard;
