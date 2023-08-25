@@ -9,7 +9,7 @@ export type PokemonCardProps = {
 const PokemonCard = ({ pokemon }: PokemonCardProps) => (
   <div
     key={pokemon.id}
-    className={`flex py-3 px-2 rounded-xl justify-between hover:cursor-pointer shadow bg-type-${pokemon?.types[0]?.type?.name}`}
+    className={`flex px-4 pb-2 pt-6 rounded-xl justify-between hover:cursor-pointer shadow bg-type-${pokemon?.types[0]?.type?.name}`}
   >
     <div className="flex flex-col">
       <p className="text-white font-semibold first-letter:uppercase mb-1">
