@@ -1,16 +1,22 @@
 // import { Pokemon } from '@/types'
-
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
+import PokemonModal from "../PokemonModal/PokemonModal";
+import { useState } from "react";
 
 export type PokemonCardProps = {
-  pokemon: any
-}
+  pokemon: any;
+};
 
-const PokemonCard = ({ pokemon }: PokemonCardProps) => (
+const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+  const [modal, setModal] = useState(false);
+
   <div
+    onClick={() => setModal(!modal)}
     key={pokemon.id}
     className={`flex py-3 px-2 rounded-xl justify-between hover:cursor-pointer shadow bg-type-${pokemon?.types[0]?.type?.name}`}
   >
+    {modal && <PokemonModal />}
     <div className="flex flex-col">
       <p className="text-white font-semibold first-letter:uppercase mb-1">
         {pokemon?.name}
@@ -32,9 +38,9 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => (
       alt={pokemon.name}
       width={100}
       height={100}
-      src={pokemon.sprites.other['official-artwork'].front_default}
+      src={pokemon.sprites.other["official-artwork"].front_default}
     />
-  </div>
-)
+  </div>;
+};
 
-export default PokemonCard
+export default PokemonCard;
