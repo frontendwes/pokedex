@@ -1,8 +1,9 @@
-import { PokemonCard } from '@/components'
-import Services from '@/services'
+import { PokemonCard } from "@/components";
+import Services from "@/services";
 
 const Home = async () => {
-  const pokemons = await Services.GetPokemons()
+  const pokemons = await Services.GetPokemons();
+  console.log(pokemons?.map((item) => console.log(item.id)));
   return (
     <div className="flex w-[1000px] p-3 ">
       <div className="grid grid-cols-2 gap-3">
@@ -11,7 +12,7 @@ const Home = async () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
